@@ -1,75 +1,39 @@
-<<<<<<< HEAD
-# SendEveryThing - 即時資訊分享
-
-## 專案簡介
-=======
 # Pairon_frontend
 
-本專案為個人碩論[整合深度學習與多重特徵提取之人物辨識及全身追蹤系統](https://hdl.handle.net/11296/8ytxzm)的前端實作部分，需要配合[後端](https://github.com/FelixChen1224/Pairon)進行使用。
->>>>>>> 236ccc5129ad5edc70a8e266637a73b4b7cacab5
+本專案為個人碩論[整合深度學習與多重特徵提取之人物辨識及全身追蹤系統](https://nfuedu-my.sharepoint.com/:b:/g/personal/11161115_nfu_edu_tw/EYsucjSdPC5EilwhdXpUICMBe2WGj3V94p1UbM2N3-0HIg?e=vmi2eI)的前端實作部分，需要配合[後端](https://github.com/FelixChen1224/Pairon)運行。
 
-SendEveryThing 是一款基於 Vue.js + Spring Boot 的即時資訊分享平台，提供匿名檔案上傳下載、即時聊天室、多人檔案管理與端對端加密等功能，確保資訊安全與隱私，此為Vue.js的前端專案。  
-🔹 匿名檔案分享：無須註冊即可上傳與下載檔案。  
-🔹 即時聊天室：支援 AES-GCM 加密，確保訊息安全。  
-🔹 多人檔案管理：註冊用戶可管理與分享檔案。  
-🔹 安全驗證：採用 JWT、Spring Security、OAuth 2.0 (Google) 進行身份驗證。
+## 專案流程
 
-## 技術架構
+```mermaid
+sequenceDiagram
 
-### 前端 (Vue 3)
+    participant User
+    participant Vue as Vue Interface
+    participant REST as RESTful API
+    participant Socket as Socket.IO
+    participant Backend
 
-🔹 Vue 3 Composition API + Pinia (狀態管理)  
-🔹 Vite (開發環境)  
-🔹 Web Worker (提高性能)
+    User->>Vue: 1.1 選擇影片檔案
+    Vue->>REST: 1.2 POST /upload/video
+    REST-->>Vue: 1.3 回傳上傳確認
+    Vue->>Socket: 1.4 建立WebSocket連接
+    Socket-->>Vue: 1.5 連接確認
 
-### 後端 (Spring Boot)
+    Backend->>Socket: 2.1 傳送處理進度更新
+    Socket->>Vue: 2.2 更新進度資訊
+    Vue->>User: 2.3 顯示進度指標
 
-🔹 Spring Boot 3 + Spring Security  
-🔹 WebSocket (即時聊天)  
-🔹 JWT / OAuth 2.0 (身份驗證)
+    Backend->>Socket: 3.1 傳送特徵辨識結果
+    Socket->>Vue: 3.2 更新辨識資訊
+    Vue->>User: 3.3 更新視覺化元件
 
-### 資料庫
-
-🔹 MongoDB / MySQL (資料儲存)  
-🔹 IPFS (分散式檔案儲存)
-
-### DevOps & 部署
-
-🔹 Nginx (反向代理)  
-🔹 Docker (DB 部署)  
-🔹 GitHub (版本控制)
-
-## Recommended IDE Setup
-
-<<<<<<< HEAD
-[VSCode](https://code.visualstudio.com/)
-
-##
-
-## Project Setup
-
-```sh
-npm install
+    Backend->>Socket: 4.1 處理完成通知
+    Socket->>Vue: 4.2 傳送完成狀態
+    Vue->>REST: 4.3 GET /video/result
+    REST-->>Vue: 4.4 回傳處理結果
+    Vue->>User: 4.5 顯示完整報告
 ```
 
-### Compile and Hot-Reload for Development
+## 專案畫面
 
-```sh
-npm run dev
-```
-
-```sh
-http://localhost:8081
-```
-
-### Compile and Minify
-
-```sh
-npm run build
-```
-
-```sh
-services/Unify_API/API_URL.js
-```
-=======
->>>>>>> 236ccc5129ad5edc70a8e266637a73b4b7cacab5
+![首頁](https://i.imgur.com/CWQEuHl.png)
