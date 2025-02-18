@@ -1,35 +1,66 @@
-# Pairon
+# SendEveryThing - 即時資訊分享
 
-本專案為個人碩論[整合深度學習與多重特徵提取之人物辨識及全身追蹤系統](https://hdl.handle.net/11296/8ytxzm)的後端實作部分，基於視覺基礎模型(vision foundation model)進行零樣本(Zero-shot)的人物辨識與追蹤系統。
+## 專案簡介
 
-## 專案概述
+SendEveryThing 是一款基於 Vue.js + Spring Boot 的即時資訊分享平台，提供匿名檔案上傳下載、即時聊天室、多人檔案管理與端對端加密等功能，確保資訊安全與隱私，此為Vue.js的前端專案。  
+🔹 匿名檔案分享：無須註冊即可上傳與下載檔案。  
+🔹 即時聊天室：支援 AES-GCM 加密，確保訊息安全。  
+🔹 多人檔案管理：註冊用戶可管理與分享檔案。  
+🔹 安全驗證：採用 JWT、Spring Security、OAuth 2.0 (Google) 進行身份驗證。
 
-Pairon 是一套整合深度學習與多重特徵提取的人物辨識及全身追蹤系統。 本系統突破傳統人臉辨識的限制，能夠對有遮擋或不完整的人臉擷取特徵，並透過零樣本學習實現各種情況下的人臉特徵辨識，進而將辨識到的人物進行持續追蹤。
+## 技術架構
 
-## 辨識效能
+### 前端 (Vue 3)
 
-### 資料集
+🔹 Vue 3 Composition API + Pinia (狀態管理)  
+🔹 Vite (開發環境)  
+🔹 Web Worker (提高性能)
 
-- 使用 **Market-1501** 與**Market-1501 Attribute** 資料集進行實驗，並結合其附帶的屬性標註進行人物屬性辨識評估，遮擋情境追蹤為利用自行設計的影像資料進行實驗。
+### 後端 (Spring Boot)
 
-### 人物辨識性能
+🔹 Spring Boot 3 + Spring Security  
+🔹 WebSocket (即時聊天)  
+🔹 JWT / OAuth 2.0 (身份驗證)
 
-- **Rank-1 準確率**：92.99%
-- **Rank-5 準確率**：97.18%
-- **Rank-10 準確率**：97.80%
+### 資料庫
 
-### 人物屬性辨識
+🔹 MongoDB / MySQL (資料儲存)  
+🔹 IPFS (分散式檔案儲存)
 
-- 配件與服裝顏色辨識準確率均超過 95%
+### DevOps & 部署
 
-### 遮擋情境追蹤
+🔹 Nginx (反向代理)  
+🔹 Docker (DB 部署)  
+🔹 GitHub (版本控制)
 
-- 系統成功應對九種不同類型的遮擋情境（例如動態人群遮擋、機車交會等），在追蹤穩定性上顯著超越傳統方法（如 ByteTrack 與 BoT-SORT）。
+## Recommended IDE Setup
 
-### 環境需求
+[VSCode](https://code.visualstudio.com/)
 
-本系統需要以下模型檔案才能正常運行：
+##
 
-- GFPGAN 模型檔：用於人臉修復與增強
-  - 下載位置：[GFPGAN Model](https://drive.google.com/drive/folders/1AspP1c836z_abNLn1REQNvXQvnQ43zBR?usp=sharing)
-  - 將下載的模型放入根目錄下
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+```sh
+http://localhost:8081
+```
+
+### Compile and Minify
+
+```sh
+npm run build
+```
+
+```sh
+services/Unify_API/API_URL.js
+```
