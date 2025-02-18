@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # SendEveryThing - 即時資訊分享
 
 ## 專案簡介
+=======
+# Pairon_frontend
+
+本專案為個人碩論[整合深度學習與多重特徵提取之人物辨識及全身追蹤系統](https://hdl.handle.net/11296/8ytxzm)的前端實作部分，需要配合[後端](https://github.com/FelixChen1224/Pairon)進行使用。
+>>>>>>> 236ccc5129ad5edc70a8e266637a73b4b7cacab5
 
 SendEveryThing 是一款基於 Vue.js + Spring Boot 的即時資訊分享平台，提供匿名檔案上傳下載、即時聊天室、多人檔案管理與端對端加密等功能，確保資訊安全與隱私，此為Vue.js的前端專案。  
 🔹 匿名檔案分享：無須註冊即可上傳與下載檔案。  
@@ -35,6 +41,7 @@ SendEveryThing 是一款基於 Vue.js + Spring Boot 的即時資訊分享平台�
 
 ## Recommended IDE Setup
 
+<<<<<<< HEAD
 [VSCode](https://code.visualstudio.com/)
 
 ##
@@ -64,3 +71,5 @@ npm run build
 ```sh
 services/Unify_API/API_URL.js
 ```
+=======
+>>>>>>> 236ccc5129ad5edc70a8e266637a73b4b7cacab5
