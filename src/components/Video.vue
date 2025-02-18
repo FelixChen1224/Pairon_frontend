@@ -413,6 +413,13 @@ async function getFrameInfo() {
   }
 }
 
+async function getResults() {
+  axios
+    .get('http://127.0.0.1:5001/video/results')
+    .then((response) => {
+      console.log('Received results:', response.data)
+    })
+
 const example = () => {
   console.log('Example button clicked')
   startStream()
