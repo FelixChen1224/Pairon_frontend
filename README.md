@@ -1,4 +1,4 @@
-# Pairon
+# Pairon_frontend
 
 本專案為個人碩論[整合深度學習與多重特徵提取之人物辨識及全身追蹤系統](https://hdl.handle.net/11296/8ytxzm)的後端實作部分，基於視覺基礎模型(vision foundation model)進行零樣本(Zero-shot)的人物辨識與追蹤系統。
 
